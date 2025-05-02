@@ -1,0 +1,152 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.main-content {
+    flex: 3; /* Takes up 3/4 of the available space */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.sidebar {
+    flex: 1; /* Takes up 1/4 of the available space */
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 0.5em 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar li a:hover {
+    color: #007bff;
+}
+
+/* Content Items (inside main-content) */
+.content-items {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.item {
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1; /* Distribute items equally */
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Mobile (up to 768px wide) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1em;
+        align-items: flex-start;
+        gap: 0.5em;
+    }
+
+    .container {
+        flex-direction: column; /* Stack main content and sidebar */
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .content-items {
+        flex-direction: column; /* Stack content items */
+    }
+}
+
+/* Tablet (from 769px to 1024px wide) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stack main content and sidebar */
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .content-items {
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        justify-content: space-around; /* Distribute items with space around */
+    }
+
+    .item {
+        flex-basis: calc(50% - 5px); /* Two items per row */
+    }
+}
+
+/* Desktop (wider than 1024px) - Default styles will apply */
